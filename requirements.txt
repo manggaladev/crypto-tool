@@ -1,0 +1,6 @@
+cryptography>=42.0.0
+click>=8.1.0
+
+# Development dependencies
+pytest>=8.0.0
+pytest-cov>=4.1.0
