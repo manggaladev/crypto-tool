@@ -271,7 +271,7 @@ crypto-tool/
 
 ## License
 
-MIT License - Copyright (c) 2026 manggaladev
+MIT License - see [LICENSE](LICENSE) file.
 
 ## Contributing
 
