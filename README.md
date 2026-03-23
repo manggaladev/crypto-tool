@@ -85,7 +85,3 @@ crypto-tool/
 
 [MIT License](LICENSE)
 
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/manggaladev/crypto-tool)
-- [Issues](https://github.com/manggaladev/crypto-tool/issues)
