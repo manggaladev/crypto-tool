@@ -134,7 +134,8 @@ class TestCLI:
             '-o', str(key_dir),
             '-t', 'rsa',
             '-s', '2048',
-            '-n', 'mykey'
+            '-n', 'mykey',
+            '-p', ''  # Empty password for non-interactive mode
         ])
 
         assert result.exit_code == 0
@@ -210,13 +211,15 @@ class TestCLI:
 
     def test_rsa_encrypt_decrypt(self, runner, temp_dir):
         """Test RSA encryption via CLI."""
-        # Generate keys
+        # Generate keys with empty password
         key_dir = temp_dir / "keys"
-        runner.invoke(main, [
+        gen_result = runner.invoke(main, [
             'generate-key',
             '-o', str(key_dir),
-            '-n', 'testkey'
+            '-n', 'testkey',
+            '-p', ''  # Empty password for non-interactive mode
         ])
+        assert gen_result.exit_code == 0, f"Key generation failed: {gen_result.output}"
 
         # Create test file
         input_file = temp_dir / "test.txt"
@@ -234,15 +237,16 @@ class TestCLI:
             '-a', 'rsa'
         ])
 
-        assert result.exit_code == 0
+        assert result.exit_code == 0, f"Encryption failed: {result.output}"
 
         # Decrypt with RSA
         result = runner.invoke(main, [
             'decrypt',
             '-i', str(encrypted_file),
             '-o', str(decrypted_file),
-            '-k', str(key_dir / "testkey.pem")
+            '-k', str(key_dir / "testkey.pem"),
+            '--key-password', ''
         ])
 
-        assert result.exit_code == 0
+        assert result.exit_code == 0, f"Decryption failed: {result.output}"
         assert decrypted_file.read_text() == "RSA Test"

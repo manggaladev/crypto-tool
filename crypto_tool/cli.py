@@ -293,7 +293,7 @@ def decrypt(
                 print_error("RSA encrypted file requires --private-key option")
                 sys.exit(1)
 
-            if not key_password:
+            if key_password is None:
                 key_password = get_password("Enter private key password (leave empty if none)")
 
             encryptor = RSAEncryptor()

@@ -170,7 +170,7 @@ class TestRSAEncryptor:
         input_file = temp_dir / "test.txt"
         input_file.write_text("Test")
         encrypted_file = temp_dir / "test.enc"
-        decrypted_file = temp_dir / "test.txt"
+        decrypted_file = temp_dir / "test_decrypted.txt"
 
         # First encrypt with a key
         private_key, public_key = encryptor.generate_key_pair()
