@@ -6,8 +6,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/manggaladev/crypto-tool?style=for-the-badge)](https://github.com/manggaladev/crypto-tool/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/manggaladev/crypto-tool?style=for-the-badge)](https://github.com/manggaladev/crypto-tool/issues)
 
 </div>
 
@@ -27,7 +25,6 @@
 
 ```bash
 # Clone
-git clone https://github.com/manggaladev/crypto-tool.git
 cd crypto-tool
 
 # Install
@@ -91,6 +88,5 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 
 **[⬆ Back to Top](#-crypto-tool)**
 
-Made with ❤️ by [manggaladev](https://github.com/manggaladev)
 
 </div>
